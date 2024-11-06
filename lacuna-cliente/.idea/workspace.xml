@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8cd110d9-9c92-484d-8aea-40854665e50e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../lacuna-api/src/main/java/com/api/novoserasaapi/controller/LacunaUpload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/src/main/java/com/api/novoserasaapi/NovoserasaApiApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/src/main/java/com/api/novoserasaapi/controller/NovoSerasaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/src/main/java/com/api/novoserasaapi/controller/Servico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/src/main/java/com/api/novoserasaapi/model/TokenResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/src/main/java/com/api/novoserasaapi/response/SerasaResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/src/main/java/com/api/novoserasaapi/response/SerasaResponsePJ.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/src/main/java/com/api/novoserasaapi/security/JwtTokenAuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/src/main/java/com/api/novoserasaapi/security/JwtTokenProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/src/main/java/com/api/novoserasaapi/security/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/src/main/java/com/api/novoserasaapi/security/ServerHttpBearerAuthenticationConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/src/main/java/com/api/novoserasaapi/service/SerasaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/src/main/java/com/api/novoserasaapi/util/CommonsUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/src/main/java/com/api/novoserasaapi/util/GsonUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-api/src/test/java/com/api/novoserasaapi/NovoserasaApiApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/novoserasa-cliente.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/Addresses.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/Bankrupts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/BankruptsResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/Check.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/CheckInquiriesQuantity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/CollectionRecords.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/CreditInquiriesQuantity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/Facts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/Inquiry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/InquiryQuantity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/InquiryResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/InquirySummary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/JudgementFilingResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/JudgementFilings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/NegativeData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/Notary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/NotaryResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/Partner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/PartnershipResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/Pefin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/Phone.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/Refin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/Registration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/Report.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/Reports.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/Score.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/StolenDocuments.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/StolenDocumentsResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PF/Summary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjAddress.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjCompanyData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjDirector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjDirectorCompleteReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjFacts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjHistorical.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjIdentificationReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjInquiryCompanyResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjInquiryResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjNegativeData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjNegativeDataSummary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjNotary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjPartner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjPartnerCompleteReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjPredecessor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjQsaReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjQuantity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjResults.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjScore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjScoreResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/PjSummary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/src/main/java/br/com/galleriabank/novoserasa/cliente/model/PJ/RetornoConsultaPj.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoserasa-cliente/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2oQz2JACTN2oqlthBStcvlpW9x9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.lacuna-cliente [install].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/TI GalleriaBank/Documents/Galleriabank/WorkingGit/lacuna/lacuna-cliente",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8cd110d9-9c92-484d-8aea-40854665e50e" name="Changes" comment="" />
+      <created>1730816378845</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730816378845</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
+  </component>
+</project>
