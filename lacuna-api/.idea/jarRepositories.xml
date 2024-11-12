@@ -7,6 +7,11 @@
       <option name="url" value="https://repo.maven.apache.org/maven2" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="lacuna.repository" />
+      <option name="name" value="lacuna repository" />
+      <option name="url" value="http://dl.bintray.com/lacunasoftware/maven" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="galleriabank_nexus" />
       <option name="name" value="galleriabank repo" />
       <option name="url" value="https://espelho.galleriabank.com.br/nexus/repository/maven-releases/" />
