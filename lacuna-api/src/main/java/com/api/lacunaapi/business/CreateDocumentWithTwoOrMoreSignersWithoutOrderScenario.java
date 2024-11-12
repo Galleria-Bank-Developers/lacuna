@@ -1,5 +1,6 @@
-package com.api.lacunaapi.controller;
+package com.api.lacunaapi.business;
 
+import com.api.lacunaapi.model.AssinantesModel;
 import com.api.lacunaapi.util.Scenario;
 import com.api.lacunaapi.util.Util;
 import com.lacunasoftware.signer.FileUploadModel;
@@ -11,17 +12,20 @@ import com.lacunasoftware.signer.javaclient.builders.FileUploadModelBuilder;
 import com.lacunasoftware.signer.javaclient.exceptions.RestException;
 import com.lacunasoftware.signer.javaclient.models.UploadModel;
 import com.lacunasoftware.signer.users.ParticipantUserModel;
+
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Base64;
+import java.util.List;
 
+//Classe de exemplo de como assinar documento fornecida pela <<LACUNA>>
 public class CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario extends Scenario {
-    /**
-     * This scenario demonstrates the creation of a document with
-     * two signers and without a particular order for the signatures.
-     */
-    public void Run() throws IOException, RestException {
+
+    public void signDocument(String nomearquivo, List<AssinantesModel> assinantesModelList, String documento) throws IOException, RestException {
         // 1. The file's bytes must be read by the application and uploaded
-        byte[] content = Util.getInstance().getResourceFile("sample.pdf");
+       // byte[] content = Util.getInstance().getResourceFile("sample.pdf");
+       //byte[] content = documento;
+        byte[] content = Base64.getDecoder().decode(documento);
         UploadModel uploadModel = signerClient.uploadFile("sample.pdf", content, "application/pdf");
 
         // 2. Define the name of the document which will be visible in the application
@@ -30,14 +34,14 @@ public class CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario extends Scen
 
         // 3. For each participant on the flow, create one instance of ParticipantUserModel
         ParticipantUserModel participantUserOne = new ParticipantUserModel();
-        participantUserOne.setName("Jack Bauer");
-        participantUserOne.setEmail("jack.bauer@mailinator.com");
-        participantUserOne.setIdentifier("75502846369");
+        participantUserOne.setName(assinantesModelList.get(0).getNome());
+        participantUserOne.setEmail(assinantesModelList.get(0).getEmail());
+        participantUserOne.setIdentifier(assinantesModelList.get(0).getCpfCnpj());
 
         ParticipantUserModel participantUserTwo = new ParticipantUserModel();
-        participantUserTwo.setName("James Bond");
-        participantUserTwo.setEmail("james.bond@mailinator.com");
-        participantUserTwo.setIdentifier("95588148061");
+        participantUserTwo.setName(assinantesModelList.get(assinantesModelList.size() - 1).getNome());
+        participantUserTwo.setEmail(assinantesModelList.get(assinantesModelList.size() - 1).getEmail());
+        participantUserTwo.setIdentifier(assinantesModelList.get(assinantesModelList.size() - 1).getCpfCnpj());
 
         // 4. Create a FlowActionCreateModel instance for each action (signature or approval) in the flow.
         //    This object is responsible for defining the personal data of the participant, the type of

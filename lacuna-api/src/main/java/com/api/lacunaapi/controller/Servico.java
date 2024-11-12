@@ -17,7 +17,7 @@ public class Servico {
         return "LACUNA ONLINE";
     }
 
-    @GetMapping("jwt")
+    @GetMapping("/jwt")
     public static String generateJWT() {
         if (CommonsUtil.sistemaWindows())
             return JwtUtil.generateJWTServicos();
@@ -25,13 +25,16 @@ public class Servico {
             return null;
     }
 
-        @GetMapping("jwtWebhok")
+    @GetMapping("/jwtWebhok")
     public static String generateJWTReaWebwook() {
         if (CommonsUtil.sistemaWindows())
             return JwtUtil.generateJWTWebhook(false);
         else
             return null;
     }
+
+
+
 }
 
 

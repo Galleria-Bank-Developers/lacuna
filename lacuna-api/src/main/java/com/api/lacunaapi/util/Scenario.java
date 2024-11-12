@@ -5,6 +5,7 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.api.lacunaapi.model.AssinantesModel;
 import com.lacunasoftware.signer.documents.CreateDocumentRequest;
 import com.lacunasoftware.signer.documents.CreateDocumentResult;
 import com.lacunasoftware.signer.FileUploadModel;
@@ -15,19 +16,24 @@ import com.lacunasoftware.signer.javaclient.exceptions.RestException;
 import com.lacunasoftware.signer.javaclient.SignerClient;
 import com.lacunasoftware.signer.javaclient.models.UploadModel;
 import com.lacunasoftware.signer.javaclient.builders.FileUploadModelBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 
 public abstract class Scenario {
 
     protected SignerClient signerClient;
 
+    @Autowired
+    protected Environment env;
+
     public void Init() throws URISyntaxException {
         String domain = "https://signer-lac.azurewebsites.net";
-        String token = "API Sample App|43fc0da834e48b4b840fd6e8c37196cf29f919e5daedba0f1a5ec17406c13a99";
+        String token = "7617337d1b3b5041a66c82b4b97e0d6c2f743c9a8b38535bc83351ad68409a80";
         signerClient = new SignerClient(domain, token);
     }
 
     // Creates a generic document, useful for certain scenarios.
-    public abstract void Run() throws IOException, RestException, Exception;
+    public abstract void signDocument(String nomearquivo, List<AssinantesModel> assinantesModelList, String documento) throws IOException, RestException, Exception;
 
     protected CreateDocumentResult createDocument() throws IOException, RestException {
         byte[] content = Util.getInstance().getResourceFile("sample.pdf");
