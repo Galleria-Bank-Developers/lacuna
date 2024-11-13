@@ -15,7 +15,7 @@
     </ul>
   </li>
   <li><strong>Banco de Dados:</strong> PostgreSQL</li>
-  <li><strong>Ferramentas de Integração:</strong> API Serasa</li>
+  <li><strong>Ferramentas de Integração:</strong> API Lacuna</li>
 </ul>
 
 <h2>Requisitos</h2>
