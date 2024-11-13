@@ -28,5 +28,5 @@
   
   <li>Maven 3.8+</li>
   <li>PostgreSQL 13+</li>
-  <li>Conta de API da Serasa</li>
+  <li>Conta no site assinador.galleriabank da Lacuna</li>
 </ul>
