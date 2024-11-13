@@ -17,6 +17,11 @@
       <option name="url" value="https://espelho.galleriabank.com.br/nexus/repository/maven-releases/" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="galleriabank_nexus" />
+      <option name="name" value="Galleria Bank Repository" />
+      <option name="url" value="https://espelho.galleriabank.com.br/nexus/repository/maven-releases/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Maven Central repository" />
       <option name="url" value="https://repo1.maven.org/maven2" />

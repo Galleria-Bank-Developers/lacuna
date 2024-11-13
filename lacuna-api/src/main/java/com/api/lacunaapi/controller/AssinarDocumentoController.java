@@ -3,6 +3,7 @@ package com.api.lacunaapi.controller;
 import com.api.lacunaapi.business.CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario;
 import com.api.lacunaapi.model.AssinantesModel;
 import com.lacunasoftware.signer.javaclient.exceptions.RestException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -13,10 +14,13 @@ import java.net.URISyntaxException;
 @CrossOrigin(origins = "*")
 public class AssinarDocumentoController {
 
+    @Autowired
+    CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario createDocumentWithTwoOrMoreSignersWithoutOrderScenario;
+
     @PostMapping("/assinardocumento")
     public String signDocument(@RequestBody AssinantesModel request) {
         try {
-            CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario createDocumentWithTwoOrMoreSignersWithoutOrderScenario = new CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario();
+            //CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario createDocumentWithTwoOrMoreSignersWithoutOrderScenario = new CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario();
             createDocumentWithTwoOrMoreSignersWithoutOrderScenario.Init();
             createDocumentWithTwoOrMoreSignersWithoutOrderScenario.signDocument(request.getNome(), request.getListaAssinantes(), request.getDocumento());
 

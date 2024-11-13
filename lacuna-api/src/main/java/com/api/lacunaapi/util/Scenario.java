@@ -19,6 +19,8 @@ import com.lacunasoftware.signer.javaclient.builders.FileUploadModelBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 
+import javax.annotation.PostConstruct;
+
 public abstract class Scenario {
 
     protected SignerClient signerClient;
@@ -26,9 +28,10 @@ public abstract class Scenario {
     @Autowired
     protected Environment env;
 
+    @PostConstruct
     public void Init() throws URISyntaxException {
-        String domain = "https://signer-lac.azurewebsites.net";
-        String token = "7617337d1b3b5041a66c82b4b97e0d6c2f743c9a8b38535bc83351ad68409a80";
+        String domain = env.getProperty("URL2");
+        String token = env.getProperty("API_KEY");
         signerClient = new SignerClient(domain, token);
     }
 
