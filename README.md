@@ -1,4 +1,4 @@
-<h1>Projeto de Integração com Lacuna</h1>
+<h1>Projeto Microserviço com Lacuna</h1>
 
 <h2>Descrição</h2>
 <p>
@@ -12,11 +12,6 @@
       <li>Java</li>
       <li>Spring Boot</li>
       <li>RESTful APIs</li>
-    </ul>
-  </li>
-  <li><strong>Frontend:</strong>
-    <ul>
-      <li>PrimeFaces</li>
     </ul>
   </li>
   <li><strong>Banco de Dados:</strong> PostgreSQL</li>
