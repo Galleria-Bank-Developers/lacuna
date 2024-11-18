@@ -1,25 +1,24 @@
 package com.api.lacunaapi.util;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
-
 import com.api.lacunaapi.model.AssinantesModel;
+import com.lacunasoftware.signer.FileUploadModel;
+import com.lacunasoftware.signer.FlowActionType;
 import com.lacunasoftware.signer.documents.CreateDocumentRequest;
 import com.lacunasoftware.signer.documents.CreateDocumentResult;
-import com.lacunasoftware.signer.FileUploadModel;
 import com.lacunasoftware.signer.flowactions.FlowActionCreateModel;
-import com.lacunasoftware.signer.FlowActionType;
-import com.lacunasoftware.signer.users.ParticipantUserModel;
-import com.lacunasoftware.signer.javaclient.exceptions.RestException;
 import com.lacunasoftware.signer.javaclient.SignerClient;
-import com.lacunasoftware.signer.javaclient.models.UploadModel;
 import com.lacunasoftware.signer.javaclient.builders.FileUploadModelBuilder;
+import com.lacunasoftware.signer.javaclient.exceptions.RestException;
+import com.lacunasoftware.signer.javaclient.models.UploadModel;
+import com.lacunasoftware.signer.users.ParticipantUserModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 
 import javax.annotation.PostConstruct;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Scenario {
 
@@ -57,12 +56,14 @@ public abstract class Scenario {
         CreateDocumentRequest documentRequest = new CreateDocumentRequest();
         documentRequest.setFiles(new ArrayList<FileUploadModel>() {
             private static final long serialVersionUID = 1L;
+
             {
                 add(fileUploadModelBuilder.toModel());
             }
         });
         documentRequest.setFlowActions(new ArrayList<FlowActionCreateModel>() {
             private static final long serialVersionUID = 1L;
+
             {
                 add(flowActionCreateModel);
             }

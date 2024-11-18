@@ -19,21 +19,15 @@ public class Servico {
 
     @GetMapping("/jwt")
     public static String generateJWT() {
-        if (CommonsUtil.sistemaWindows())
-            return JwtUtil.generateJWTServicos();
-        else
-            return null;
+        if (CommonsUtil.sistemaWindows()) return JwtUtil.generateJWTServicos();
+        else return null;
     }
 
     @GetMapping("/jwtWebhok")
     public static String generateJWTReaWebwook() {
-        if (CommonsUtil.sistemaWindows())
-            return JwtUtil.generateJWTWebhook(false);
-        else
-            return null;
+        if (CommonsUtil.sistemaWindows()) return JwtUtil.generateJWTWebhook(false);
+        else return null;
     }
-
-
 
 }
 

@@ -4,7 +4,9 @@ import com.api.lacunaapi.business.CreateDocumentWithTwoOrMoreSignersWithoutOrder
 import com.api.lacunaapi.model.AssinantesModel;
 import com.lacunasoftware.signer.javaclient.exceptions.RestException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -20,11 +22,10 @@ public class AssinarDocumentoController {
     @PostMapping("/assinardocumento")
     public String signDocument(@RequestBody AssinantesModel request) {
         try {
-            //CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario createDocumentWithTwoOrMoreSignersWithoutOrderScenario = new CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario();
             createDocumentWithTwoOrMoreSignersWithoutOrderScenario.Init();
             createDocumentWithTwoOrMoreSignersWithoutOrderScenario.signDocument(request.getNome(), request.getListaAssinantes(), request.getDocumento());
 
-            return "Documento assinado com sucesso!";
+            return "Documento enviado com sucesso!";
         } catch (IOException | RestException e) {
             e.printStackTrace();
             return "Erro ao assinar o documento: " + e.getMessage();
