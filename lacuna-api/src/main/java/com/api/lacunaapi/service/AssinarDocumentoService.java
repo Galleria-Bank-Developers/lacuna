@@ -1,7 +1,11 @@
 package com.api.lacunaapi.service;
 
 import com.api.lacunaapi.model.AssinantesModel;
+import com.api.lacunaapi.model.UrlAssinanteRequest;
+import com.api.lacunaapi.model.UrlResponseModel;
 import com.api.lacunaapi.util.CommonsUtil;
+import com.api.lacunaapi.util.GsonUtil;
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -36,18 +40,25 @@ public class AssinarDocumentoService {
             throw new IllegalArgumentException("A lista de assinantes não pode ser vazia.");
         }
 
-        AssinantesModel requestBody = assinantesModelList.get(0);
+        for (AssinantesModel assinantesModel : assinantesModelList) {
+            UrlAssinanteRequest urlAssinanteRequest = new UrlAssinanteRequest(assinantesModel);
 
-        String url = String.format(urlDomain + "api/documents/%s/action-url", documentId);
+            String url = String.format(urlDomain + "api/documents/%s/action-url", documentId);
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("X-Api-Key", value);
+            HttpHeaders headers = new HttpHeaders();
+            headers.set("X-Api-Key", value);
 
-        HttpEntity<AssinantesModel> entity = new HttpEntity<>(requestBody, headers);
+            HttpEntity<UrlAssinanteRequest> entity = new HttpEntity<>(urlAssinanteRequest, headers);
 
-        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
+            ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
 
-        return response.getBody();
+            UrlResponseModel urlResponseModel = GsonUtil.fromJson(response.getBody(), UrlResponseModel.class);
+
+            assinantesModel.setUrlAssinatura(urlResponseModel.getUrl());
+
+        }
+
+        return GsonUtil.toJson(assinantesModelList);
     }
 
 }

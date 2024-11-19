@@ -14,4 +14,5 @@ public class AssinantesModel {
     private String email;
     private List<AssinantesModel> listaAssinantes;
     private String documento;
+    private String urlAssinatura;
 }

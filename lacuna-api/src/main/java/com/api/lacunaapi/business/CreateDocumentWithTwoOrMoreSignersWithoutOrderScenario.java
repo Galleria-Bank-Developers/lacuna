@@ -1,6 +1,5 @@
 package com.api.lacunaapi.business;
 
-import com.api.lacunaapi.controller.AssinarDocumentoController;
 import com.api.lacunaapi.model.AssinantesModel;
 import com.api.lacunaapi.service.AssinarDocumentoService;
 import com.api.lacunaapi.util.CommonsUtil;
@@ -49,32 +48,29 @@ public class CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario extends Scen
             FileUploadModelBuilder fileUploadModelBuilder = new FileUploadModelBuilder(uploadModel);
             fileUploadModelBuilder.setDisplayName("Two Signers Without Order Sample");
 
-            ParticipantUserModel participantUserOne = new ParticipantUserModel();
-            participantUserOne.setName(assinantesModelList.get(0).getNome());
-            participantUserOne.setEmail(assinantesModelList.get(0).getEmail());
-            participantUserOne.setIdentifier(assinantesModelList.get(0).getCpfCnpj());
 
-            ParticipantUserModel participantUserTwo = new ParticipantUserModel();
-            participantUserTwo.setName(assinantesModelList.get(assinantesModelList.size() - 1).getNome());
-            participantUserTwo.setEmail(assinantesModelList.get(assinantesModelList.size() - 1).getEmail());
-            participantUserTwo.setIdentifier(assinantesModelList.get(assinantesModelList.size() - 1).getCpfCnpj());
+            //fazer for para cada participante inserir no
+            List<FlowActionCreateModel> flowActionCreateModels = new ArrayList<>();
 
-            FlowActionCreateModel flowActionCreateModelOne = new FlowActionCreateModel();
-            flowActionCreateModelOne.setType(FlowActionType.SIGNER);
-            flowActionCreateModelOne.setUser(participantUserOne);
+            for (AssinantesModel assinante : assinantesModelList) {
+                ParticipantUserModel participantUser = new ParticipantUserModel();
+                participantUser.setName(assinante.getNome());
+                participantUser.setEmail(assinante.getEmail());
+                participantUser.setIdentifier(assinante.getCpfCnpj());
 
-            FlowActionCreateModel flowActionCreateModelTwo = new FlowActionCreateModel();
-            flowActionCreateModelTwo.setType(FlowActionType.SIGNER);
-            flowActionCreateModelTwo.setUser(participantUserTwo);
+                FlowActionCreateModel flowActionCreateModel = new FlowActionCreateModel();
+                flowActionCreateModel.setType(FlowActionType.SIGNER);
+                flowActionCreateModel.setUser(participantUser);
+
+                flowActionCreateModels.add(flowActionCreateModel);
+            }
 
             // Criar a lista de FileUploadModel
             List<FileUploadModel> fileUploadModels = new ArrayList<>();
             fileUploadModels.add(fileUploadModelBuilder.toModel());
 
             // Criar a lista de FlowActionCreateModel
-            List<FlowActionCreateModel> flowActionCreateModels = new ArrayList<>();
-            flowActionCreateModels.add(flowActionCreateModelOne);
-            flowActionCreateModels.add(flowActionCreateModelTwo);
+
 
             CreateDocumentRequest documentRequest = new CreateDocumentRequest();
             documentRequest.setFiles(fileUploadModels);
