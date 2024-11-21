@@ -35,7 +35,7 @@ public abstract class Scenario {
     }
 
     // Creates a generic document, useful for certain scenarios.
-    public abstract void signDocument(String nomearquivo, List<AssinantesModel> assinantesModelList, String documento) throws IOException, RestException, Exception;
+    public abstract String signDocument(String nomearquivo, List<AssinantesModel> assinantesModelList, String documento) throws IOException, RestException, Exception;
 
     protected CreateDocumentResult createDocument() throws IOException, RestException {
         byte[] content = Util.getInstance().getResourceFile("sample.pdf");

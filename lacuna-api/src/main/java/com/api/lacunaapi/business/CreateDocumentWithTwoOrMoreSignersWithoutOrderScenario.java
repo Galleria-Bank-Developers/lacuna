@@ -28,7 +28,7 @@ public class CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario extends Scen
     private AssinarDocumentoService assinarDocumentoService;
 
     @Override
-    public void signDocument(String nomeArquivo, List<AssinantesModel> assinantesModelList, String documento) throws IOException, RestException {
+    public String signDocument(String nomeArquivo, List<AssinantesModel> assinantesModelList, String documento) throws IOException, RestException {
         try {
             if (CommonsUtil.semValor(signerClient)) {
                 throw new IllegalStateException("SignerClient não inicializado corretamente pelo Spring.");
@@ -48,8 +48,6 @@ public class CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario extends Scen
             FileUploadModelBuilder fileUploadModelBuilder = new FileUploadModelBuilder(uploadModel);
             fileUploadModelBuilder.setDisplayName("Two Signers Without Order Sample");
 
-
-            //fazer for para cada participante inserir no
             List<FlowActionCreateModel> flowActionCreateModels = new ArrayList<>();
 
             for (AssinantesModel assinante : assinantesModelList) {
@@ -65,12 +63,8 @@ public class CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario extends Scen
                 flowActionCreateModels.add(flowActionCreateModel);
             }
 
-            // Criar a lista de FileUploadModel
             List<FileUploadModel> fileUploadModels = new ArrayList<>();
             fileUploadModels.add(fileUploadModelBuilder.toModel());
-
-            // Criar a lista de FlowActionCreateModel
-
 
             CreateDocumentRequest documentRequest = new CreateDocumentRequest();
             documentRequest.setFiles(fileUploadModels);
@@ -80,7 +74,7 @@ public class CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario extends Scen
 
             System.out.println(String.format("Document %s created", result.getDocumentId().toString()));
 
-            assinarDocumentoService.getUrlDocumento(result.getDocumentId().toString(), assinantesModelList);
+           return assinarDocumentoService.getUrlDocumento(result.getDocumentId().toString(), assinantesModelList);
 
         } catch (Exception e) {
             System.err.println("Erro na assinatura lacuna: " + e.getMessage());

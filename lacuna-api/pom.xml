@@ -12,7 +12,7 @@
 
 	<groupId>br.com.galleriabank.lacuna-api</groupId>
 	<artifactId>lacuna-api</artifactId>
-	<version>0.0.1</version>
+	<version>1.0.0</version>
 	<name>lacuna-api</name>
 	<description>API para integração com Lacuna</description>
 
