@@ -6,6 +6,7 @@ import com.lacunasoftware.signer.javaclient.exceptions.RestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.io.IOException;
@@ -20,7 +21,7 @@ public class AssinarDocumentoController {
     CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario createDocumentWithTwoOrMoreSignersWithoutOrderScenario;
 
     @PostMapping("/assinardocumento")
-    public String signDocument(@RequestBody AssinantesModel request) {
+    public String signDocument(@RequestBody AssinantesModel request, @RequestBody byte[] file) {
         try {
             createDocumentWithTwoOrMoreSignersWithoutOrderScenario.Init();
             createDocumentWithTwoOrMoreSignersWithoutOrderScenario.signDocument(request.getNome(), request.getListaAssinantes(), request.getDocumento());
