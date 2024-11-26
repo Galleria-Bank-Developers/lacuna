@@ -1,6 +1,6 @@
 package com.api.lacunaapi.business;
 
-import com.api.lacunaapi.model.AssinantesModel;
+import br.com.galleriabank.lacuna.cliente.model.AssinantesModel;
 import com.api.lacunaapi.service.AssinarDocumentoService;
 import com.api.lacunaapi.util.CommonsUtil;
 import com.api.lacunaapi.util.Scenario;
@@ -34,7 +34,7 @@ public class CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario extends Scen
                 throw new IllegalStateException("SignerClient não inicializado corretamente pelo Spring.");
             }
 
-            if (CommonsUtil.semValor(assinantesModelList) || assinantesModelList.size() < 2) {
+            if (CommonsUtil.semValor(assinantesModelList) || assinantesModelList.size() < 1) {
                 throw new IllegalArgumentException("É necessário uma lista de pelo menos dois signatários.");
             }
 
@@ -42,7 +42,7 @@ public class CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario extends Scen
                 throw new IllegalArgumentException("O documento está vazio ou null.");
             }
 
-            byte[] content = Base64.getDecoder().decode(documento);
+            byte[] content = Base64.getUrlDecoder().decode(documento);
             UploadModel uploadModel = signerClient.uploadFile("sample.pdf", content, "application/pdf");
 
             FileUploadModelBuilder fileUploadModelBuilder = new FileUploadModelBuilder(uploadModel);

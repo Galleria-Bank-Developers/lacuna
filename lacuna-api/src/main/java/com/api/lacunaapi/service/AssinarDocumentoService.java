@@ -1,12 +1,10 @@
 package com.api.lacunaapi.service;
 
-import com.api.lacunaapi.model.AssinantesModel;
+import br.com.galleriabank.lacuna.cliente.model.AssinantesModel;
 import com.api.lacunaapi.model.UrlAssinanteRequest;
 import com.api.lacunaapi.model.UrlResponseModel;
 import com.api.lacunaapi.util.CommonsUtil;
 import com.api.lacunaapi.util.GsonUtil;
-import com.google.gson.Gson;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -14,8 +12,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
 
 import java.util.List;
 

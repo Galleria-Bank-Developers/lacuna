@@ -135,6 +135,12 @@
 			<artifactId>security-common</artifactId>
 			<version>1.2.2</version>
 		</dependency>
+
+		<dependency>
+			<groupId>br.com.galleriabank.lacuna.cliente</groupId>
+			<artifactId>lacuna-cliente</artifactId>
+			<version>1.0-0</version>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -1,5 +1,6 @@
 package com.api.lacunaapi.model;
 
+import br.com.galleriabank.lacuna.cliente.model.AssinantesModel;
 import lombok.Getter;
 import lombok.Setter;
 

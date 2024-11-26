@@ -1,6 +1,6 @@
 package com.api.lacunaapi.util;
 
-import com.api.lacunaapi.model.AssinantesModel;
+import br.com.galleriabank.lacuna.cliente.model.AssinantesModel;
 import com.lacunasoftware.signer.FileUploadModel;
 import com.lacunasoftware.signer.FlowActionType;
 import com.lacunasoftware.signer.documents.CreateDocumentRequest;

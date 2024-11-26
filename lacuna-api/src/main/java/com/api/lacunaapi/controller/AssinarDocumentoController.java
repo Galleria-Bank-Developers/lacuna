@@ -1,13 +1,11 @@
 package com.api.lacunaapi.controller;
 
+import br.com.galleriabank.lacuna.cliente.model.AssinantesModel;
 import com.api.lacunaapi.business.CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario;
-import com.api.lacunaapi.model.AssinantesModel;
+import com.api.lacunaapi.util.GsonUtil;
 import com.lacunasoftware.signer.javaclient.exceptions.RestException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.reactive.function.client.WebClient;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -21,16 +19,19 @@ public class AssinarDocumentoController {
     CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario createDocumentWithTwoOrMoreSignersWithoutOrderScenario;
 
     @PostMapping("/assinardocumento")
-    public String signDocument(@RequestBody AssinantesModel request, @RequestBody byte[] file) {
+    public String signDocument(@RequestBody String request) {
         try {
             createDocumentWithTwoOrMoreSignersWithoutOrderScenario.Init();
-            createDocumentWithTwoOrMoreSignersWithoutOrderScenario.signDocument(request.getNome(), request.getListaAssinantes(), request.getDocumento());
+            AssinantesModel assinantesModel = GsonUtil.fromJson(request, AssinantesModel.class);
+
+            createDocumentWithTwoOrMoreSignersWithoutOrderScenario.signDocument(assinantesModel.getNome(), assinantesModel.getListaAssinantes(), assinantesModel.getDocumentoBase64());
 
             return "Documento enviado com sucesso!";
-        } catch (IOException | RestException e) {
-            e.printStackTrace();
-            return "Erro ao assinar o documento: " + e.getMessage();
         } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        } catch (RestException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
