@@ -27,8 +27,6 @@ public class GsonUtil {
         return listType;
     }
 
-
-
     public static String toJson(Object object) {
         return gson.toJson(object);
     }

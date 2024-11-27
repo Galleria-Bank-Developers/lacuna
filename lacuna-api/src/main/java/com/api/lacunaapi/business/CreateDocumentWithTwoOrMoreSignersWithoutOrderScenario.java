@@ -46,7 +46,7 @@ public class CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario extends Scen
             UploadModel uploadModel = signerClient.uploadFile("sample.pdf", content, "application/pdf");
 
             FileUploadModelBuilder fileUploadModelBuilder = new FileUploadModelBuilder(uploadModel);
-            fileUploadModelBuilder.setDisplayName("Two Signers Without Order Sample");
+            fileUploadModelBuilder.setDisplayName(nomeArquivo);
 
             List<FlowActionCreateModel> flowActionCreateModels = new ArrayList<>();
 

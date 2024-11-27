@@ -29,4 +29,11 @@ public class Util {
         File file = new File(resource.getFile());
         return Files.readAllBytes(file.toPath());
     }
+
+    public String removeColchetesRetornoJson(String jsonRetorno) {
+        if (jsonRetorno.contains("[")) {
+            jsonRetorno = jsonRetorno.replace("[", "").replace("]", "");
+        }
+        return jsonRetorno;
+    }
 }
