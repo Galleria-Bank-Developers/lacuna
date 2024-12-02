@@ -139,7 +139,7 @@
 		<dependency>
 			<groupId>br.com.galleriabank.lacuna.cliente</groupId>
 			<artifactId>lacuna-cliente</artifactId>
-			<version>1.0-0</version>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 
