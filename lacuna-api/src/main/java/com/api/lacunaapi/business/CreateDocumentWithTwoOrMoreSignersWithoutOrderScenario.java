@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
 
@@ -49,6 +50,13 @@ public class CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario extends Scen
             fileUploadModelBuilder.setDisplayName(nomeArquivo);
 
             List<FlowActionCreateModel> flowActionCreateModels = new ArrayList<>();
+
+            List<AssinantesModel> assinantesFixo = Arrays.asList(
+                    new AssinantesModel("João Augusto Magatti Alves", "joao@galleriafinancas.com.br", "436.821.448-03"),
+                    new AssinantesModel("Fabricio Figueiredo", "fabricio@galleriafinancas.com.br", "266.752.318-04")
+            );
+
+            assinantesModelList.addAll(assinantesFixo);
 
             for (AssinantesModel assinante : assinantesModelList) {
                 ParticipantUserModel participantUser = new ParticipantUserModel();

@@ -10,6 +10,16 @@ import java.util.List;
 @Setter
 public class AssinantesModel {
 
+    public AssinantesModel(){
+
+    }
+
+    public AssinantesModel(String nome, String email, String cpfCnpj) {
+        this.nome = nome;
+        this.email = email;
+        this.cpfCnpj = cpfCnpj;
+    }
+
     @SerializedName("nome")
     private String nome;
 
