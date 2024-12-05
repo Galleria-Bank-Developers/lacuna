@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 @RestController
-@RequestMapping("/api/v1/lacuna")
+@RequestMapping("/api/v1")
 @CrossOrigin(origins = "*")
 public class AssinarDocumentoController {
 
