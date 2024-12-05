@@ -40,4 +40,7 @@ public class AssinantesModel {
 
     @SerializedName("documentoBase64")
     private String documentoBase64;
+
+    @SerializedName("tipoEmissaoSelecionadoOnr")
+    private String tipoEmissaoSelecionadoOnr;
 }
