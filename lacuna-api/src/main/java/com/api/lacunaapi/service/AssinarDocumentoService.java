@@ -18,11 +18,14 @@ import java.util.List;
 @Service
 public class AssinarDocumentoService {
 
-    @Value("${URL2}")
+    @Value("${URL}")
     private String urlDomain;
 
-    @Value("${API_KEY}")
+    @Value("${API_KEY_CONTRATOS}")
     private String value;
+
+    @Value("${API_KEY_CARTORIO}")
+    private String keyValueCatorio;
 
     private final String key = "X-Api-Key";
     private final RestTemplate restTemplate;
@@ -42,7 +45,12 @@ public class AssinarDocumentoService {
             String url = String.format(urlDomain + "api/documents/%s/action-url", documentId);
 
             HttpHeaders headers = new HttpHeaders();
-            headers.set("X-Api-Key", value);
+
+            if (assinantesModel.getTipoEmissaoSelecionadoOnr().equals("contratos")){
+                headers.set("X-Api-Key", value);
+            } else {
+                headers.set("X-Api-Key", keyValueCatorio);
+            }
 
             HttpEntity<UrlAssinanteRequest> entity = new HttpEntity<>(urlAssinanteRequest, headers);
 

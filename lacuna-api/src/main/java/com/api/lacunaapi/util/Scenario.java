@@ -27,10 +27,16 @@ public abstract class Scenario {
     @Autowired
     protected Environment env;
 
-    @PostConstruct
-    public void Init() throws URISyntaxException {
-        String domain = env.getProperty("URL2");
-        String token = env.getProperty("API_KEY");
+    public void Init(AssinantesModel assinantesModel) throws URISyntaxException {
+        String token;
+        String domain = env.getProperty("URL");
+
+        if (assinantesModel.getTipoEmissaoSelecionadoOnr().equals("contratos")){
+             token = env.getProperty("API_KEY_CONTRATOS");
+        } else{
+             token = env.getProperty("API_KEY_CARTORIO");
+        }
+
         signerClient = new SignerClient(domain, token);
     }
 
@@ -72,4 +78,6 @@ public abstract class Scenario {
 
         return documentResults.get(0);
     }
+
+    public abstract String signDocument(AssinantesModel assinantesModel, List<AssinantesModel> assinantesModelList) throws IOException, RestException;
 }

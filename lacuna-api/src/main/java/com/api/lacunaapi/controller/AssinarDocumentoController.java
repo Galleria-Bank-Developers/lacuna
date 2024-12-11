@@ -23,14 +23,10 @@ public class AssinarDocumentoController {
     @PostMapping("/assinardocumento")
     public ResponseEntity<String> signDocument(@RequestBody String request) {
         try {
-            createDocumentWithTwoOrMoreSignersWithoutOrderScenario.Init();
-
             AssinantesModel assinantesModel = GsonUtil.fromJson(request, AssinantesModel.class);
+            createDocumentWithTwoOrMoreSignersWithoutOrderScenario.Init(assinantesModel);
 
-            String signDocumentResponse = createDocumentWithTwoOrMoreSignersWithoutOrderScenario.signDocument(
-                    assinantesModel.getDocumento(),
-                    assinantesModel.getListaAssinantes(),
-                    assinantesModel.getDocumentoBase64());
+            String signDocumentResponse = createDocumentWithTwoOrMoreSignersWithoutOrderScenario.signDocument(assinantesModel,assinantesModel.getListaAssinantes());
 
             return ResponseEntity.ok(signDocumentResponse);
 

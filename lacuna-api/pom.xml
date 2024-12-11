@@ -141,6 +141,12 @@
 			<artifactId>lacuna-cliente</artifactId>
 			<version>1.0.2</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.lacunasoftware.restpki</groupId>
+			<artifactId>restpki-client</artifactId>
+			<version>1.15.7</version>
+		</dependency>
 	</dependencies>
 
 	<build>
