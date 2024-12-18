@@ -3,6 +3,7 @@ package com.api.lacunaapi.controller;
 import br.com.galleriabank.lacuna.cliente.model.AssinantesModel;
 import ch.qos.logback.classic.pattern.Util;
 import com.api.lacunaapi.business.CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario;
+import com.api.lacunaapi.model.WebhookPayload;
 import com.api.lacunaapi.util.GsonUtil;
 import com.lacunasoftware.signer.javaclient.exceptions.RestException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -39,5 +41,11 @@ public class AssinarDocumentoController {
         }
     }
 
+    @PostMapping("/assinatura/completa/webhook")
+    public ResponseEntity<String> webhookAssinatura(@RequestBody Map<String, Object> payload) {
+        System.out.println("Recebido payload do Webhook: " + payload);
+
+        return ResponseEntity.ok("Webhook recebido com sucesso!");
+    }
 
 }
