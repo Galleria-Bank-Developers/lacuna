@@ -1,10 +1,13 @@
 package com.api.lacunaapi.service;
 
 import br.com.galleriabank.lacuna.cliente.model.AssinantesModel;
+import br.com.galleriabank.lacuna.cliente.model.ResponseDocumentLacuna;
 import com.api.lacunaapi.model.UrlAssinanteRequest;
 import com.api.lacunaapi.model.UrlResponseModel;
 import com.api.lacunaapi.util.CommonsUtil;
 import com.api.lacunaapi.util.GsonUtil;
+import com.lacunasoftware.signer.documents.CreateDocumentRequest;
+import com.lacunasoftware.signer.documents.CreateDocumentResult;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -34,7 +37,7 @@ public class AssinarDocumentoService {
         this.restTemplate = new RestTemplate();
     }
 
-    public String getUrlDocumento(String documentId, List<AssinantesModel> assinantesModelList) {
+    public String getUrlDocumento(CreateDocumentResult createDocumentResult, List<AssinantesModel> assinantesModelList) {
         if (CommonsUtil.semValor(assinantesModelList) || assinantesModelList.isEmpty()) {
             throw new IllegalArgumentException("A lista de assinantes não pode ser vazia.");
         }
@@ -42,11 +45,11 @@ public class AssinarDocumentoService {
         for (AssinantesModel assinantesModel : assinantesModelList) {
             UrlAssinanteRequest urlAssinanteRequest = new UrlAssinanteRequest(assinantesModel);
 
-            String url = String.format(urlDomain + "api/documents/%s/action-url", documentId);
+            String url = String.format(urlDomain + "api/documents/%s/action-url", createDocumentResult.getDocumentId());
 
             HttpHeaders headers = new HttpHeaders();
 
-            if (assinantesModel.getTipoEmissaoSelecionadoOnr().equals("contratos")){
+            if (assinantesModel.getTipoEmissaoSelecionadoOnr().equals("contratos")) {
                 headers.set("X-Api-Key", value);
             } else {
                 headers.set("X-Api-Key", keyValueCatorio);
@@ -62,8 +65,10 @@ public class AssinarDocumentoService {
 
         }
 
-        return GsonUtil.toJson(assinantesModelList);
+        ResponseDocumentLacuna responseDocumentLacuna = new ResponseDocumentLacuna();
+        responseDocumentLacuna.setCreateDocumentResult(createDocumentResult);
+        responseDocumentLacuna.setListAssinantesModels(assinantesModelList);
+
+        return GsonUtil.toJson(responseDocumentLacuna);
     }
-
-
 }

@@ -92,7 +92,7 @@ public class CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario extends Scen
 
             System.out.println(String.format("Document %s created", result.getDocumentId().toString()));
 
-            return assinarDocumentoService.getUrlDocumento(result.getDocumentId().toString(), assinantesModelList);
+            return assinarDocumentoService.getUrlDocumento(result, assinantesModelList);
 
         } catch (Exception e) {
             System.err.println("Erro na assinatura lacuna: " + e.getMessage());
