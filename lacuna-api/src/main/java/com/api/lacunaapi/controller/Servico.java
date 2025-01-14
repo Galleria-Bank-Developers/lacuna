@@ -14,7 +14,7 @@ public class Servico {
 
     @GetMapping()
     private String status() {
-        return "LACUNA ASSINANDO TUDO - ONLINE v1.0.2";
+        return "LACUNA ONLINE - Versao - v1.0.3";
     }
 
     @GetMapping("/jwt")
