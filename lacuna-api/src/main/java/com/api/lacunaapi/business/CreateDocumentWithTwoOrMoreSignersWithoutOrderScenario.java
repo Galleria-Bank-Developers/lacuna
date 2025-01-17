@@ -47,7 +47,7 @@ public class CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario extends Scen
                 throw new IllegalArgumentException("O documento está vazio ou null.");
             }
 
-            byte[] content = Base64.getUrlDecoder().decode(assinantesModel.getDocumentoBase64());
+            byte[] content = Base64.getDecoder().decode(assinantesModel.getDocumentoBase64());
             UploadModel uploadModel = signerClient.uploadFile("sample.pdf", content, "application/pdf");
 
             FileUploadModelBuilder fileUploadModelBuilder = new FileUploadModelBuilder(uploadModel);
@@ -88,7 +88,8 @@ public class CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario extends Scen
             documentRequest.setFiles(fileUploadModels);
             documentRequest.setFlowActions(flowActionCreateModels);
 
-            CreateDocumentResult result = signerClient.createDocument(documentRequest).get(0);
+            List<CreateDocumentResult> results = signerClient.createDocument(documentRequest);
+            CreateDocumentResult result = results.get(0);
 
             System.out.println(String.format("Document %s created", result.getDocumentId().toString()));
 
@@ -97,7 +98,8 @@ public class CreateDocumentWithTwoOrMoreSignersWithoutOrderScenario extends Scen
         } catch (Exception e) {
             System.err.println("Erro na assinatura lacuna: " + e.getMessage());
             e.printStackTrace();
-            throw new RuntimeException("Erro inesperado ao tentar assinar o documento", e);
+            //throw new RuntimeException("Erro inesperado ao tentar assinar o documento", e);
+            return e.getMessage();
         }
     }
 

@@ -28,6 +28,10 @@ public class AssinarDocumentoController {
 
             String signDocumentResponse = createDocumentWithTwoOrMoreSignersWithoutOrderScenario.signDocument(assinantesModel,assinantesModel.getListaAssinantes());
 
+        if(signDocumentResponse.startsWith("REST action POST https://assinador.galleriabank.com.br/api/documents returned HTTP error 400: ")){
+            signDocumentResponse = signDocumentResponse.replace("REST action POST https://assinador.galleriabank.com.br/api/documents returned HTTP error 400: ", "");
+            return ResponseEntity.badRequest().body(signDocumentResponse);
+        }
             return ResponseEntity.ok(signDocumentResponse);
 
         } catch (URISyntaxException e) {
